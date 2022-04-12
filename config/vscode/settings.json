@@ -1,0 +1,19 @@
+{
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "Alabaster",
+    "workbench.colorCustomizations": {
+      "terminalCursor.foreground": "#47b8d6
+    },
+    "cornflakes.linter.executablePath": "~/.local/bin/flake8",
+    "cornflakes.linter.run": "onType",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/.local/bin/flake8",
+    "terminal.integrated.scrollback": 100000000000,
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "bash",
+        "icon": "terminal-bash",
+        "args": ["--login"]
+      },
+    }
+}
