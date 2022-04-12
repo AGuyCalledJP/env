@@ -1,0 +1,74 @@
+syntax on
+
+set expandtab				" Expand tabs to spaces.
+set filetype=text
+set foldenable				" Enable tab folding
+set foldmethod=indent		" Set fold for indented lines.
+set hlsearch				" Highlight search results.
+set incsearch				" Start highlighting at search.
+set lazyredraw				" Don't rerender the screen.
+set number					" Enable line numbers.
+set shiftwidth=4			" Indents will have a width of 4.
+set showmatch				" Match brackets.
+set softtabstop=4			" Sets the number of columns for a TAB.
+set spelllang=en_us			" Set spellcheck language.
+set tabstop=4				" The width of a TAB is set to 4.
+
+cnoreabbrev nt NERDTree
+cnoreabbrev nT NERDTreeToggle
+
+filetype indent on
+
+" Docker config --------------------------------------------------
+autocmd BufNewFile docker-compose.y*ml
+	\ :0r ~/.vim/templates/docker-compose.yml
+
+" JSON config ----------------------------------------------------
+autocmd BufRead *.json
+	\ set filetype=json
+
+" LaTeX config ---------------------------------------------------
+autocmd BufNewFile *.tex
+    \ :0!mkdir ./images             |
+    \ :0r ~/.vim/templates/latex
+
+" Makefile config ------------------------------------------------
+autocmd FileType make
+	\ set noexpandtab               |
+	\ set shiftwidth=8              |
+	\ set softtabstop=0
+
+" Pkgbuild config ------------------------------------------------
+autocmd BufRead,BufNewfile PKGBUILD
+    \ set autoindent                |
+    \ set expandtab                 |
+    \ set fileformat=unix           |
+    \ set filetype=PKGBUILD         |
+    \ set noexpandtab               |
+    \ set shiftwidth=2              |
+    \ set softtabstop=2
+
+" Python/YAML config ---------------------------------------------
+autocmd BufNewFile *.py
+	\ 0r ~/.vim/templates/python
+
+autocmd BufRead,BufNewfile *.ps1
+    \ set tabstop=2                 |
+    \ set softtabstop=2             |
+    \ set shiftwidth=2              |
+    \ set expandtab
+
+autocmd Filetype python,yaml
+	\ set modeline                  |
+    \ set autoindent                |
+    \ set expandtab                 |
+    \ set fileformat=unix           |
+    \ set textwidth=120
+
+autocmd BufNewFile *.sh
+    \ :0r ~/.vim/templates/sh
+
+
+" Terraform config
+autocmd BufNewFile *.tf
+    \ 0r ~/.vim/templates/terraform

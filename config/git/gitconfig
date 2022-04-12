@@ -1,0 +1,28 @@
+[user]
+    name = Jared Polonitza
+    email = jpolonitza@primetrust.com
+    #signingKey = 0x53C1E81340A0DEBD
+[core]
+    editor = vim
+    hooksPath = /home/aguycalledjp/.git/hooks
+[alias]
+    st = status
+    s = switch
+    b = branch
+    cp = cherry-pick
+    c = cherry
+    co = checkout
+    cob = checkout -b 
+    ci = commit
+    ps = push
+    l = log
+    w = whatchanged
+    lol = log --oneline
+    f = fetch
+    rh = reset -- hard
+[init]
+    defaultBranch = main
+[commit]
+    gpgsign = false
+[push]
+    default = current
