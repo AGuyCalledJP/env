@@ -1,4 +1,4 @@
-all: env git gpg psql python ssh vim
+all: env git vim vscode
 
 # Make variables.
 CONFIG:= "${HOME}/.env/config"
