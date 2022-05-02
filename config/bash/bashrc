@@ -98,6 +98,8 @@ export EDITOR="vim"
 export AWS_CONFIG_FILE=~/.aws/config
 export AWS_CREDENTIALS_FILE=~/.aws/credentials
 
-getsecrets                                                          # Get encrypted env vars if Yubikey is connected.
+export $(xargs < ~/Documents/.env)
 
 complete -C /usr/bin/terraform terraform
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
