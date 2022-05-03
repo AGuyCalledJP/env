@@ -7,3 +7,9 @@
 [submodule "config/vim/pack/vim-surround/start"]
 	path = config/vim/pack/vim-surround/start
 	url = https://github.com/tpope/vim-surround.git
+[submodule "config/vim/pack/vim-airline/start/vim-airline"]
+	path = config/vim/pack/vim-airline/start/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "config/vim/pack/vim-nerdtree/start/vim-nerdtree"]
+	path = config/vim/pack/vim-nerdtree/start/vim-nerdtree
+	url = git@github.com:preservim/nerdtree
