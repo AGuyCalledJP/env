@@ -1,15 +1,27 @@
-[submodule "config/vim/pack/nerdtree/start"]
-	path = config/vim/pack/nerdtree/start
-	url = git@github.com:preservim/nerdtree
 [submodule "config/vim/pack/vim-flake8/start"]
 	path = config/vim/pack/vim-flake8/start
 	url = git@github.com:nvie/vim-flake8
 [submodule "config/vim/pack/vim-surround/start"]
 	path = config/vim/pack/vim-surround/start
 	url = https://github.com/tpope/vim-surround.git
-[submodule "config/vim/pack/vim-airline/start/vim-airline"]
-	path = config/vim/pack/vim-airline/start/vim-airline
-	url = git@github.com:vim-airline/vim-airline.git
 [submodule "config/vim/pack/vim-nerdtree/start/vim-nerdtree"]
 	path = config/vim/pack/vim-nerdtree/start/vim-nerdtree
 	url = git@github.com:preservim/nerdtree
+[submodule "config/vim/pack/vim-lightline/start/vim-lightline"]
+	path = config/vim/pack/vim-lightline/start/vim-lightline
+	url = git@github.com:itchyny/lightline.vim.git
+[submodule "config/vim/pack/vim-lightline-bufferline/start/lightline-bufferline"]
+	path = config/vim/pack/vim-lightline-bufferline/start/lightline-bufferline
+	url = git@github.com:mengelbrecht/lightline-bufferline.git
+[submodule "config/vim/pack/vim-gitbranch/start/vim-gitbranch"]
+	path = config/vim/pack/vim-gitbranch/start/vim-gitbranch
+	url = git@github.com:itchyny/vim-gitbranch.git
+[submodule "config/vim/pack/vim-js/start/vim-js"]
+	path = config/vim/pack/vim-js/start/vim-js
+	url = git@github.com:yuezk/vim-js.git
+[submodule "config/vim/pack/vim-taboo/start/vim-taboo"]
+	path = config/vim/pack/vim-taboo/start/vim-taboo
+	url = git@github.com:gcmt/taboo.vim.git
+[submodule "config/vim/pack/vim-ctrlp/start/vim-ctrlp"]
+	path = config/vim/pack/vim-ctrlp/start/vim-ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
