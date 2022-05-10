@@ -25,3 +25,9 @@
 [submodule "config/vim/pack/vim-ctrlp/start/vim-ctrlp"]
 	path = config/vim/pack/vim-ctrlp/start/vim-ctrlp
 	url = git@github.com:ctrlpvim/ctrlp.vim.git
+[submodule "config/vim/pack/vim-ctrlsf/start/vim-ctrlsf"]
+	path = config/vim/pack/vim-ctrlsf/start/vim-ctrlsf
+	url = git@github.com:dyng/ctrlsf.vim.git
+[submodule "config/vim/pack/vim-visual-multi/start/vim-visual-multi"]
+	path = config/vim/pack/vim-visual-multi/start/vim-visual-multi
+	url = git@github.com:mg979/vim-visual-multi.git

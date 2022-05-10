@@ -19,7 +19,10 @@ set laststatus=2
 colorscheme wal
 
 cnoreabbrev nt NERDTree
-cnoreabbrev nT NERDTreeToggle
+cnoreabbrev tn TabooRename
+cnoreabbrev to TabooOpen
+cnoreabbrev tr TabooReset
+cnoreabbrev csf CtrlSF
 
 filetype indent on
 
@@ -76,6 +79,8 @@ autocmd BufNewFile *.sh
 " Terraform config
 autocmd BufNewFile *.tf
     \ 0r ~/.vim/templates/terraform
+
+let g:ctrlsf_backend = 'ack'
 
 let g:lightline = {
   \ 'colorscheme': 'wal',
