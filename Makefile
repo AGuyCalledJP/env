@@ -1,4 +1,4 @@
-all: env git vim i3
+all: env git vim alacritty i3 python
 
 # Make variables.
 CONFIG:= "${HOME}/.env/config"
@@ -41,8 +41,7 @@ alacritty:
 
 
 i3:
-	@sudo pacman -Syu i3-gaps;
-	rm -rf ${HOME}/.config/i3/config                                \ 
+	@rm -rf ${HOME}/.config/i3/config                                \ 
 		2> /dev/null;												\
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config;		    \
 
