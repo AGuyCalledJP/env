@@ -17,13 +17,15 @@ env:
 
 
 git:
-	@rm -f ${HOME}/.gitconfig										\
+	@sudo pacman -Syu git;
+	rm -f ${HOME}/.gitconfig										\
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
 
 
 vim:
-	@mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
+	@sudo pacman -Syu vim;
+	mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
 		2> /dev/null;												\
 	mv ${HOME}/.vim ${HOME}/.vim.bkp								\
 		2> /dev/null;												\
@@ -31,7 +33,7 @@ vim:
 	ln -s ${CONFIG}/vim/vimrc			${HOME}/.vimrc
 
 alacritty:
-	@sudo pacman install alacritty;                                 \
+	@sudo pacman -Syu alacritty;
 	rm -f ${HOME}/.config/alacritty/alacritty.yml                   \
 		2> /dev/null;												\
 	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
@@ -39,7 +41,7 @@ alacritty:
 
 
 i3:
-	@sudo pacman install i3-gaps                                    \
+	@sudo pacman -Syu i3-gaps;
 	rm -rf ${HOME}/.config/i3/config                                \ 
 		2> /dev/null;												\
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config;		    \
