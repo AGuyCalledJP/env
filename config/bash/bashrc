@@ -90,7 +90,7 @@ if [ -x $(which thefuck) ]; then                                    # Enable the
 fi
 
 if [ -x $(which wal) ]; then                                        # Enable wal.
-  wal -i ~/Pictures/wallpaperflare.com_wallpaper.jpg
+  wal -i ~/.env/config/backgrounds/purple_forest.jpg
 fi
 
 #PROMPT_COMMAND=set_prompt
