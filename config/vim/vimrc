@@ -2,8 +2,6 @@ syntax on
 
 set expandtab				" Expand tabs to spaces.
 set filetype=text
-"set foldenable				" Enable tab folding
-"set foldmethod=indent		" Set fold for indented lines.
 set hlsearch				" Highlight search results.
 set incsearch				" Start highlighting at search.
 set lazyredraw				" Don't rerender the screen.
@@ -23,6 +21,8 @@ cnoreabbrev tn TabooRename
 cnoreabbrev to TabooOpen
 cnoreabbrev tr TabooReset
 cnoreabbrev csf CtrlSF
+cnoreabbrev ctp CtrlP .
+cnoreabbrev t3s set number!
 
 filetype indent on
 

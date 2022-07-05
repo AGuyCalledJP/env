@@ -1,4 +1,4 @@
-all: env git vim vscode
+all: env git vim i3
 
 # Make variables.
 CONFIG:= "${HOME}/.env/config"
@@ -22,11 +22,6 @@ git:
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
 
 
-python:
-	@python -m ensurepip --upgrade &&								\
-		pip install --user -r ${CONFIG}/python/requirements.txt
-
-
 vim:
 	@mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
 		2> /dev/null;												\
@@ -35,10 +30,22 @@ vim:
 	ln -s ${CONFIG}/vim					${HOME}/.vim;				\
 	ln -s ${CONFIG}/vim/vimrc			${HOME}/.vimrc
 
-
-vscode:
-	@mv ${HOME}/.config/Code/User/keybindings.json                  \
-		${HOME}/.config/Code/User/keybindings.bkp                   \
+alacritty:
+	@sudo pacman install alacritty;                                 \
+	rm -f ${HOME}/.config/alacritty/alacritty.yml                   \
 		2> /dev/null;												\
-	ln -s ${CONFIG}/vscode/keybindings.json                         \
-		${HOME}/.config/Code/User/keybindings.json
+	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
+		${HOME}/.config/alacritty/alacritty.yml
+
+
+i3:
+	@sudo pacman install i3-gaps                                    \
+	rm -rf ${HOME}/.config/i3/config                                \ 
+		2> /dev/null;												\
+	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config;		    \
+
+
+python:
+	@python -m ensurepip --upgrade &&								\
+		pip install --user -r ${CONFIG}/python/requirements.txt
+

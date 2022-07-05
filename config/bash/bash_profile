@@ -6,3 +6,4 @@
 source /home/user/.rvm/scripts/rvm
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+. "$HOME/.cargo/env"
