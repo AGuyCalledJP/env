@@ -34,7 +34,7 @@ vim:
 
 alacritty:
 	@sudo pacman -Syu alacritty;
-	rm -f ${HOME}/.config/alacritty/alacritty.yml                   \
+	rm -rf ${HOME}/.config/alacritty                                \
 		2> /dev/null;												\
 	mkdir ${HOME}/.config/alacritty;
 	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
