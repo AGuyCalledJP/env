@@ -122,3 +122,5 @@ complete -C /usr/bin/terraform terraform
 
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
+
+xmodmap ~/.xmodmaprc
