@@ -36,12 +36,13 @@ alacritty:
 	@sudo pacman -Syu alacritty;
 	rm -f ${HOME}/.config/alacritty/alacritty.yml                   \
 		2> /dev/null;												\
+	mkdir ${HOME}/.config/alacritty;
 	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
 		${HOME}/.config/alacritty/alacritty.yml
 
 
 i3:
-	@rm -rf ${HOME}/.config/i3/config                                \ 
+	@rm -rf ${HOME}/.config/i3/config                               \ 
 		2> /dev/null;												\
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config;		    \
 
