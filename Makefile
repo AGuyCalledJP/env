@@ -46,7 +46,13 @@ alacritty:
 i3:
 	@rm -rf ${HOME}/.config/i3/config                               \ 
 		2> /dev/null;												\
-	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config;		    \
+	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config		        \
+
+
+xmodmap:
+	@rm -rf ${HOME}/.xmodmaprc                                      \ 
+		2> /dev/null;												\
+	ln -s ${CONFIG}/xmodmap/xmodmaprc ${HOME}/.xmodmaprc		    \
 
 
 python:
