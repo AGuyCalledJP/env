@@ -3,6 +3,8 @@ case $- in                                                          ## If not ru
       *) return;;
 esac
 
+set -o vi                                                           # Use VI mode for terminal navigation
+
 HISTCONTROL=ignoreboth                                              # Don't save duplicate lines or lines starting with space in history.
 HISTSIZE=1000                                                       # Set history length.
 HISTFILESIZE=2000                                                   # Set history file size.
