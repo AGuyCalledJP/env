@@ -49,6 +49,24 @@ i3:
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config		        \
 
 
+i3status:
+	@rm -rf ${HOME}/.config/i3status/config                         \
+		2> /dev/null;												\
+	ln -s ${CONFIG}/i3status/config ${HOME}/.config/i3status/config
+
+
+polybar:
+	@rm -rf ${HOME}/.config/polybar/config.ini                      \
+		2> /dev/null;												\
+	ln -s ${CONFIG}/polybar/config ${HOME}/.config/polybar/config
+
+
+wal-polybar:
+	@rm -rf /usr/bin/wal-polybar;
+	ln -s ${CONFIG}/polybar/wal-polybar.py  /usr/bin/wal-polybar;
+	wal-polybar
+
+
 xmodmap:
 	@rm -rf ${HOME}/.xmodmaprc                                      \ 
 		2> /dev/null;												\
