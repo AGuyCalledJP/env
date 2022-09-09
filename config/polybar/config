@@ -171,11 +171,11 @@ battery = BAT0
 adapter = ADP1
 poll-interval = 5
 
-format-full-prefix = "FULL "
+format-full-prefix = "BOOTED UP "
 format-full-prefix-foreground = ${colors.primary}
 label-full = %percentage%%
 
-format-charging-prefix = "CHARGING "
+format-charging-prefix = "THROUGH THE WIRE "
 format-charging-prefix-foreground = ${colors.six}
 label-charging = %percentage%% %time%
 

@@ -187,8 +187,8 @@ bar {
     mode hide
     hidden_state hide
     modifier Mod2
-    status_command i3status
-    position top
+    #status_command i3status
+    position bottom
     colors {
         background $one
         separator $seven

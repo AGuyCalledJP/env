@@ -31,3 +31,6 @@
 [submodule "config/vim/pack/vim-visual-multi/start/vim-visual-multi"]
 	path = config/vim/pack/vim-visual-multi/start/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
+[submodule "config/vim/pack/vim-terraform/start"]
+	path = config/vim/pack/vim-terraform/start
+	url = git@github.com:hashivim/vim-terraform.git

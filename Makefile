@@ -19,9 +19,10 @@ env:
 
 git:
 	@sudo pacman --noconfirm -Syu git;
-	rm -f ${HOME}/.gitconfig										\
+	rm -f ${HOME}/.gitconfig ${HOME}/.gitignore						\
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
+	ln -s ${CONFIG}/git/gitignore       ${HOME}/.gitignore
 
 
 vim:

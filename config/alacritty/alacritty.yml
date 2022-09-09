@@ -649,6 +649,7 @@ shell:
   program: /bin/bash
   args:
     - --login
+    - ~/Desktop/Docker/aws_ssm/mount_on_system.sh
 
 # Startup directory
 #
