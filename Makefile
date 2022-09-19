@@ -1,8 +1,9 @@
 all: env git vim alacritty i3 python
 manjaro: env git vim alacritty i3 python auracle-git pacaur chrome
+osx: nvim git yabai skhd
 
 # Make variables.
-CONFIG:= "${HOME}/.env/config"
+CONFIG:= ${HOME}/.env/config
 
 env:
 	@chown -R $(id -u):$(id -g) ${PWD};
@@ -18,10 +19,30 @@ env:
 
 
 git:
-	@sudo pacman --noconfirm -Syu git;
 	rm -f ${HOME}/.gitconfig										\
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
+
+nvim:
+	@mkdir ${HOME}/.config/nvim;                                                   \
+	mkdir ${HOME}/.config/nvim/lua;                                                   \
+	ln -s ${CONFIG}/nvim/init.lua ${HOME}/.config/nvim/init.lua;				\
+	ln -s ${CONFIG}/nvim/lua/keys.lua ${HOME}/.config/nvim/lua/keys.lua;				\
+	ln -s ${CONFIG}/nvim/lua/opts.lua ${HOME}/.config/nvim/lua/opts.lua;				\
+	ln -s ${CONFIG}/nvim/lua/plug.lua ${HOME}/.config/nvim/lua/plug.lua;				\
+	ln -s ${CONFIG}/nvim/lua/vars.lua ${HOME}/.config/nvim/lua/vars.lua;				\
+
+
+yabai:
+	rm -f ${HOME}/.yabai
+		2> /dev/null;												\
+	ln -s ${CONFIG}/yabai/yabairc ${HOME}/.yabairc
+
+
+skhd:
+	rm -f ${HOME}/.skhdrc \
+		2> /dev/null;												\
+	ln -s ${CONFIG}/skhd/skhdrc ${HOME}/.skhdrc
 
 
 vim:
@@ -32,6 +53,11 @@ vim:
 		2> /dev/null;												\
 	ln -s ${CONFIG}/vim					${HOME}/.vim;				\
 	ln -s ${CONFIG}/vim/vimrc			${HOME}/.vimrc
+
+
+kitty:
+	@mkdir ${HOME}/.config/kitty;                                                   \
+	ln -s ${CONFIG}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf;				\
 
 
 alacritty:
