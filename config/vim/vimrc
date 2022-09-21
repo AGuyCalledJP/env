@@ -23,7 +23,7 @@ cnoreabbrev to TabooOpen
 cnoreabbrev tr TabooReset
 cnoreabbrev csf CtrlSF
 cnoreabbrev ctp CtrlP .
-cnoreabbrev t3s set number!
+cnoreabbrev t3s set number! relativenumber!
 
 filetype indent on
 
