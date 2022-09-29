@@ -90,6 +90,9 @@ bindsym $mod+m split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
+# screenshot
+bindsym Ctrl+Print --release exec --no-startup-id scrot ${HOME}/Pictures/screenshots/%Y-%m-%d_%H.%M.%S.png -f -s
+
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
@@ -156,8 +159,45 @@ bindsym $mod+Shift+o resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+i resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+p resize grow width 10 px or 10 ppt
 
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources for some reason.
+set_from_resource $one i3wm.color1 #f0f0f0
+set_from_resource $two i3wm.color2 #f0f0f0
+set_from_resource $three i3wm.color3 #f0f0f0
+set_from_resource $four i3wm.color4 #f0f0f0
+set_from_resource $five i3wm.color5 #f0f0f0
+set_from_resource $six i3wm.color6 #f0f0f0
+set_from_resource $seven i3wm.color7 #f0f0f0
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $seven  $seven  $seven  $seven    $seven
+client.focused_inactive $two    $two    $seven  $two      $two
+client.unfocused        $two    $two    $seven  $two      $two
+client.urgent           $two    $two    $seven  $two      $two
+client.placeholder      $two    $two    $seven  $two      $two
+
+client.background       $bg
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    mode hide
+    hidden_state hide
+    modifier Mod2
+    #status_command i3status
+    position bottom
+    colors {
+        background $one
+        separator $seven
+        statusline $seven
+        focused_workspace $one $six $seven
+        active_workspace $one $four  $seven
+        inactive_workspace $one $four  $seven
+        urgent_workspace $one $four  $seven
+    }
 }
+
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

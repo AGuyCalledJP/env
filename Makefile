@@ -1,4 +1,4 @@
-all: env git vim alacritty i3 python
+all: env git vim alacritty i3 polybar wal-polybar
 manjaro: env git vim alacritty i3 python auracle-git pacaur chrome
 osx: nvim git yabai skhd
 
@@ -19,9 +19,10 @@ env:
 
 
 git:
-	rm -f ${HOME}/.gitconfig										\
+	@rm -f ${HOME}/.gitconfig ${HOME}/.gitignore						\
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
+	ln -s ${CONFIG}/git/gitignore       ${HOME}/.gitignore
 
 nvim:
 	@mkdir ${HOME}/.config/nvim;                                                   \
@@ -46,8 +47,7 @@ skhd:
 
 
 vim:
-	@sudo pacman --noconfirm -Syu vim;
-	mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
+	@mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
 		2> /dev/null;												\
 	mv ${HOME}/.vim ${HOME}/.vim.bkp								\
 		2> /dev/null;												\
@@ -61,8 +61,7 @@ kitty:
 
 
 alacritty:
-	@sudo pacman --noconfirm -Syu alacritty;
-	rm -rf ${HOME}/.config/alacritty                                \
+	@rm -rf ${HOME}/.config/alacritty                                \
 		2> /dev/null;												\
 	mkdir ${HOME}/.config/alacritty;
 	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
@@ -73,6 +72,24 @@ i3:
 	@rm -rf ${HOME}/.config/i3/config                               \ 
 		2> /dev/null;												\
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config		        \
+
+
+i3status:
+	@rm -rf ${HOME}/.config/i3status/config                         \
+		2> /dev/null;												\
+	ln -s ${CONFIG}/i3status/config ${HOME}/.config/i3status/config
+
+
+polybar:
+	@rm -rf ${HOME}/.config/polybar/config.ini                      \
+		2> /dev/null;												\
+	ln -s ${CONFIG}/polybar/config ${HOME}/.config/polybar/config
+
+
+wal-polybar:
+	@rm -rf /usr/bin/wal-polybar;
+	ln -s ${CONFIG}/polybar/wal-polybar.py  /usr/bin/wal-polybar;
+	wal-polybar
 
 
 xmodmap:

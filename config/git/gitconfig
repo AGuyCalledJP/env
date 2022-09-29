@@ -1,7 +1,7 @@
 [user]
     name = Jared Polonitza
     email = jpolonitza@primetrust.com
-    #signingKey = 0x53C1E81340A0DEBD
+    signingKey = E6689B8190C434D2
 [core]
     editor = vim
     hooksPath = /home/aguycalledjp/.git/hooks

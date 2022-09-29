@@ -13,6 +13,7 @@ set spelllang=en_us			" Set spellcheck language.
 set tabstop=4				" The width of a TAB is set to 4.
 set noshowmode
 set laststatus=2
+set number relativenumber
 
 colorscheme wal
 
@@ -22,7 +23,7 @@ cnoreabbrev to TabooOpen
 cnoreabbrev tr TabooReset
 cnoreabbrev csf CtrlSF
 cnoreabbrev ctp CtrlP .
-cnoreabbrev t3s set number!
+cnoreabbrev t3s set number! relativenumber!
 
 filetype indent on
 
