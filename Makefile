@@ -1,4 +1,4 @@
-all: env git vim alacritty i3 python
+all: env git vim alacritty i3 polybar wal-polybar
 manjaro: env git vim alacritty i3 python auracle-git pacaur chrome
 
 # Make variables.
@@ -18,16 +18,14 @@ env:
 
 
 git:
-	@sudo pacman --noconfirm -Syu git;
-	rm -f ${HOME}/.gitconfig ${HOME}/.gitignore						\
+	@rm -f ${HOME}/.gitconfig ${HOME}/.gitignore						\
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
 	ln -s ${CONFIG}/git/gitignore       ${HOME}/.gitignore
 
 
 vim:
-	@sudo pacman --noconfirm -Syu vim;
-	mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
+	@mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
 		2> /dev/null;												\
 	mv ${HOME}/.vim ${HOME}/.vim.bkp								\
 		2> /dev/null;												\
@@ -36,8 +34,7 @@ vim:
 
 
 alacritty:
-	@sudo pacman --noconfirm -Syu alacritty;
-	rm -rf ${HOME}/.config/alacritty                                \
+	@rm -rf ${HOME}/.config/alacritty                                \
 		2> /dev/null;												\
 	mkdir ${HOME}/.config/alacritty;
 	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
