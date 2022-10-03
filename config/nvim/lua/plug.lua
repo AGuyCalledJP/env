@@ -59,5 +59,6 @@ return require('packer').startup(function(use)
   use "junegunn/gv.vim" -- commit history
   use "windwp/nvim-autopairs" -- auto close brackets, etc.
   use "nvim-treesitter/nvim-treesitter" -- better syntax highlighting
+  use "romgrk/barbar.nvim" -- icons for pretty things
   use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 end)
