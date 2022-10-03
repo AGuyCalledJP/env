@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ~/.env/config/i3/alacritty-start.sh
 
 # start Chrome
 bindsym $mod+Shift+Return exec google-chrome-stable
@@ -95,7 +95,7 @@ bindsym Ctrl+Print --release exec --no-startup-id scrot ${HOME}/Pictures/screens
 
 # change container layout (stacked, tabbed, toggle split)
 # bindsym $mod+s layout stacking
-# bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 # bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
