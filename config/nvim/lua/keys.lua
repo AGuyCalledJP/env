@@ -10,6 +10,7 @@ map('n', '<C-b>', [[:NvimTreeToggle<cr>]], {})
 
 -- Toggle telescope
 map('n', '<C-p>', [[:Telescope find_files<cr>]], {})
+map('n', '<C-f>', [[:Telescope live_grep<cr>]], {})
 
 
 -- BARBAR KEY MAPPINGS --

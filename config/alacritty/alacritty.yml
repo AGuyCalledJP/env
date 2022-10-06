@@ -865,6 +865,7 @@ key_bindings:
   - { key: End,       mods: Shift,         action: ScrollToBottom, mode: ~Alt  }
   - { key: A,         mods: Control|Shift, chars: "\x1b[65;5u"                 }
   - { key: B,         mods: Control|Shift, chars: "\x1b[66;5u"                 }
+  - { key: F,         mods: Control|Shift, chars: "\x1b[70;5u"                 }
   - { key: H,         mods: Control|Shift, chars: "\x1b[72;5u"                 }
   - { key: J,         mods: Control|Shift, chars: "\x1b[74;5u"                 }
   - { key: L,         mods: Control|Shift, chars: "\x1b[76;5u"                 }
