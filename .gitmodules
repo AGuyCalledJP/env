@@ -34,3 +34,6 @@
 [submodule "config/vim/pack/vim-terraform/start"]
 	path = config/vim/pack/vim-terraform/start
 	url = git@github.com:hashivim/vim-terraform.git
+[submodule "config/i3/i3-battery-popup"]
+	path = config/i3/i3-battery-popup
+	url = https://github.com/rjekker/i3-battery-popup.git

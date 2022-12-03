@@ -35,6 +35,7 @@ secondary = ${wal.six}
 alert = ${wal.five}
 
 [bar/polo]
+
 width = 100%
 height = 24pt
 radius = 6

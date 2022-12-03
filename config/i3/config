@@ -82,10 +82,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+n split h
+#bindsym $mod+n split h
 
 # split in vertical orientation
-bindsym $mod+m split v
+#bindsym $mod+m split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -106,6 +106,27 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
+
+# Brightness up
+bindsym $mod+m exec ~/.env/config/i3/brightness/up.sh
+
+# Brightness down
+bindsym $mod+n exec ~/.env/config/i3/brightness/down.sh
+
+# One display
+bindsym $mod+z exec ~/.env/config/i3/screen/single.sh
+
+# Two displays
+bindsym $mod+x exec ~/.env/config/i3/screen/double.sh
+
+# Three displays
+bindsym $mod+c exec ~/.env/config/i3/screen/triple.sh
+
+# Move workspace left
+bindsym $mod+Shift+bracketleft move workspace to output left
+
+# Move workspace right
+bindsym $mod+Shift+bracketright move workspace to output right
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -148,9 +169,11 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+v reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 

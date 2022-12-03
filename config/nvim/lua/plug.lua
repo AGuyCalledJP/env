@@ -60,5 +60,6 @@ return require('packer').startup(function(use)
   use "windwp/nvim-autopairs" -- auto close brackets, etc.
   use "nvim-treesitter/nvim-treesitter" -- better syntax highlighting
   use "romgrk/barbar.nvim" -- icons for pretty things
+  use "hashivim/vim-terraform" -- terraform highlighting
   use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
 end)
