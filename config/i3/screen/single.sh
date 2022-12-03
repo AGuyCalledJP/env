@@ -1,2 +1,11 @@
 #!/bin/bash
-xrandr --output HDMI-1 --off --output DP-2 --off --output eDP-1 --auto --primary
+
+CONNECTED=$(xrandr --query | awk '$2 == "connected" && $1 != "eDP-1" { print $1}')
+
+arr=($CONNECTED)
+
+for i in ${arr[@]}; do
+  xrandr --output $i --off
+done
+
+xrandr --output eDP-1 --auto --primary
