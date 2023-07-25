@@ -114,13 +114,7 @@ bindsym $mod+m exec ~/.env/config/i3/brightness/up.sh
 bindsym $mod+n exec ~/.env/config/i3/brightness/down.sh
 
 # One display
-bindsym $mod+z exec ~/.env/config/i3/screen/single.sh
-
-# Two displays
-bindsym $mod+x exec ~/.env/config/i3/screen/double.sh
-
-# Three displays
-bindsym $mod+c exec ~/.env/config/i3/screen/triple.sh
+bindsym $mod+z exec ~/.env/config/i3/screen/double-desk.s
 
 # Move workspace left
 bindsym $mod+Shift+bracketleft move workspace to output left

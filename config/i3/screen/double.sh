@@ -2,7 +2,7 @@
 
 CONNECTED=$(xrandr --query | awk '$2 == "connected" && $1 != "eDP-1" { print $1}')
 
-INTERNAL="eDP-1"
+EXTERNAL=$(echo $CONNECTED | cut -d " " -f 0)
 EXTERNAL=$(echo $CONNECTED | cut -d " " -f 1)
 
 echo $EXTERNAL
