@@ -19,7 +19,7 @@ window:
 
   dynamic_padding: false
 
-  opacity: 0.50
+  opacity: 1.0
 
   title: Alacritty
 
@@ -57,7 +57,7 @@ font:
     family: CaskaydiaCoveNerdFont
     style: Bold Italic
 
-  size: 10.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

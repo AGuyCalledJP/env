@@ -1,4 +1,4 @@
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 local map = vim.api.nvim_set_keymap
 
@@ -44,7 +44,7 @@ map("n", "N", "Nzzzv", opts)
 -- Allow paste without losing paste buffer
 map("x", "<leader>p", [["_dP]], opts)
 
-map("n", "<C-Q>", "[[:qa<cr>]]", opts)
+-- map("n", "<C-Q>", "[[:qa<cr>]]", opts)
 
 -- Allow replace of current word
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)

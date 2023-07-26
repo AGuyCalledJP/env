@@ -116,6 +116,12 @@ bindsym $mod+n exec ~/.env/config/i3/brightness/down.sh
 # One display
 bindsym $mod+z exec ~/.env/config/i3/screen/desk.sh
 
+# Light mode
+bindsym $mod+x exec ~/.env/config/i3/wal/light.sh
+
+# Dark mode
+bindsym $mod+c exec ~/.env/config/i3/wal/dark.sh
+
 # Move workspace left
 bindsym $mod+Shift+bracketleft move workspace to output left
 

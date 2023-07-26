@@ -11,7 +11,7 @@ require'barbar'.setup {
   icons = {
     buffer_index = false,
     buffer_number = false,
-    button = '',
+    button = 'x',
     diagnostics = {
       [vim.diagnostic.severity.ERROR] = {enabled = true, icon = 'ﬀ'},
       [vim.diagnostic.severity.WARN] = {enabled = false},
