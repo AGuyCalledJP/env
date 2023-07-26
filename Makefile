@@ -1,5 +1,4 @@
 all: env git vim alacritty i3 polybar wal-polybar
-manjaro: env git vim alacritty i3 python auracle-git pacaur chrome
 osx: nvim git yabai skhd
 
 # Make variables.
@@ -19,54 +18,19 @@ env:
 
 
 git:
-	@rm -f ${HOME}/.gitconfig ${HOME}/.gitignore						\
+	@rm -f ${HOME}/.gitconfig ${HOME}/.gitignore				    \
 		2> /dev/null;												\
 	ln -s ${CONFIG}/git/gitconfig		${HOME}/.gitconfig
 	ln -s ${CONFIG}/git/gitignore       ${HOME}/.gitignore
 
 nvim:
-	@mkdir ${HOME}/.config/nvim;                                                   \
-	mkdir ${HOME}/.config/nvim/lua;                                                   \
-	ln -s ${CONFIG}/nvim/init.lua ${HOME}/.config/nvim/init.lua;				\
-	ln -s ${CONFIG}/nvim/lua/keys.lua ${HOME}/.config/nvim/lua/keys.lua;				\
-	ln -s ${CONFIG}/nvim/lua/opts.lua ${HOME}/.config/nvim/lua/opts.lua;				\
-	ln -s ${CONFIG}/nvim/lua/plug.lua ${HOME}/.config/nvim/lua/plug.lua;				\
-	ln -s ${CONFIG}/nvim/lua/vars.lua ${HOME}/.config/nvim/lua/vars.lua;				\
-
-
-yabai:
-	rm -f ${HOME}/.yabai
-		2> /dev/null;												\
-	ln -s ${CONFIG}/yabai/yabairc ${HOME}/.yabairc
-
-
-skhd:
-	rm -f ${HOME}/.skhdrc \
-		2> /dev/null;												\
-	ln -s ${CONFIG}/skhd/skhdrc ${HOME}/.skhdrc
-
-
-vim:
-	@mv ${HOME}/.vimrc ${HOME}/.vimrc.bkp 							\
-		2> /dev/null;												\
-	mv ${HOME}/.vim ${HOME}/.vim.bkp								\
-		2> /dev/null;												\
-	ln -s ${CONFIG}/vim					${HOME}/.vim;				\
-	ln -s ${CONFIG}/vim/vimrc			${HOME}/.vimrc
-
-
-kitty:
-	@mkdir ${HOME}/.config/kitty;                                                   \
-	ln -s ${CONFIG}/kitty/kitty.conf ${HOME}/.config/kitty/kitty.conf;				\
+	@ln -s ${CONFIG}/nvim/ ${HOME}/.config/
 
 
 alacritty:
-	@rm -rf ${HOME}/.config/alacritty                                \
+	@rm -rf ${HOME}/.config/alacritty                               \
 		2> /dev/null;												\
-	mkdir ${HOME}/.config/alacritty;
-	ln -s ${CONFIG}/alacritty/alacritty.yml 					    \
-		${HOME}/.config/alacritty/alacritty.yml
-
+	ln -s ${CONFIG}/alacritty/ ${HOME}/.config/
 
 i3:
 	@rm -rf ${HOME}/.config/i3/config                               \ 
@@ -74,16 +38,10 @@ i3:
 	ln -s ${CONFIG}/i3/config ${HOME}/.config/i3/config		        \
 
 
-i3status:
-	@rm -rf ${HOME}/.config/i3status/config                         \
-		2> /dev/null;												\
-	ln -s ${CONFIG}/i3status/config ${HOME}/.config/i3status/config
-
-
 polybar:
-	@rm -rf ${HOME}/.config/polybar/config.ini                      \
+	@rm -rf ${HOME}/.config/polybar/                                \
 		2> /dev/null;												\
-	ln -s ${CONFIG}/polybar/config ${HOME}/.config/polybar/config
+	ln -s ${CONFIG}/polybar/ ${HOME}/.config/
 
 
 wal-polybar:
@@ -97,30 +55,3 @@ xmodmap:
 		2> /dev/null;												\
 	ln -s ${CONFIG}/xmodmap/xmodmaprc ${HOME}/.xmodmaprc		    \
 
-
-python:
-	@python -m ensurepip --upgrade &&								\
-		pip install --user -r ${CONFIG}/python/requirements.txt
-
-
-auracle-git:
-	@cd ${HOME} &&                                                  \
-	git clone https://aur.archlinux.org/auracle-git.git &&          \
-	cd auracle-git &&                                               \
-	makepkg -si &&                                                  \
-	cd .. && rm -rf auracle-git
-
-
-#Chome drivers and this works but doesnt exit successfully
-pacaur:
-	@cd ${HOME} &&                                                  \
-	sudo pacman --noconfirm -Syu jq pipewire-jack &&                \
-	git clone https://aur.archlinux.org/pacaur.git &&               \
-	cd pacaur &&                                                    \
-	makepkg -si &&                                                  \
-	pacaur --noconfirm -Syyuu &&                                    \
-	cd .. && rm -rf pacaur
-
-
-chrome:
-	@pacaur --noconfirm -Syu google-chrome

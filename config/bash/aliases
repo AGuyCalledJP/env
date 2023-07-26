@@ -21,6 +21,7 @@ alias la='ls -lFha'
 alias lgrep='ls|grep'
 alias ll='ls -lFh'
 alias l='ls -CF'
+alias n='nvim'
 
 alias rmf="rm -rf"
 
