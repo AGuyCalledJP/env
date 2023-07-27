@@ -55,3 +55,5 @@ xmodmap:
 		2> /dev/null;												\
 	ln -s ${CONFIG}/xmodmap/xmodmaprc ${HOME}/.xmodmaprc		    \
 
+picom:
+	@ln -s ${CONFIG}/picom/ ${HOME}/.config/

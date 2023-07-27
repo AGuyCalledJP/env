@@ -9,3 +9,13 @@ killall -q polybar
 polybar polo 2>&1 | tee -a /tmp/polybar.log & disown
 
 echo "Polybar launched..."
+
+# Launch picom
+
+killall -q picom
+
+picom -b
+
+# Nitrogen set wallpaper
+
+nitrogen --restore &
