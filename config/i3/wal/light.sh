@@ -1,3 +1,3 @@
 #!/bin/bash
-wal -i "$(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99)" -q -b 000000 -l
+wal -i "$(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99 | head -1)" -q -n -l
 echo 1 > ${HOME}/.env/config/lightordark

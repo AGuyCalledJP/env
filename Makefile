@@ -44,12 +44,6 @@ polybar:
 	ln -s ${CONFIG}/polybar/ ${HOME}/.config/
 
 
-wal-polybar:
-	@rm -rf /usr/bin/wal-polybar;
-	ln -s ${CONFIG}/polybar/wal-polybar.py  /usr/bin/wal-polybar;
-	wal-polybar
-
-
 xmodmap:
 	@rm -rf ${HOME}/.xmodmaprc                                      \ 
 		2> /dev/null;												\

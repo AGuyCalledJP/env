@@ -14,7 +14,7 @@ echo "Polybar launched..."
 
 killall -q picom
 
-picom -b
+picom -b --experimental-backends
 
 # Nitrogen set wallpaper
 
