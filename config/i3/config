@@ -108,19 +108,28 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Brightness up
-bindsym $mod+m exec ~/.env/config/i3/brightness/up.sh
+bindsym $mod+Shift+m exec ~/.env/config/i3/brightness/up.sh
 
 # Brightness down
-bindsym $mod+n exec ~/.env/config/i3/brightness/down.sh
+bindsym $mod+Shift+n exec ~/.env/config/i3/brightness/down.sh
+
+# Desktop dual display
+bindsym $mod+Shift+z exec ~/.env/config/i3/screen/desk.sh
 
 # One display
-bindsym $mod+z exec ~/.env/config/i3/screen/desk.sh
+bindsym $mod+z exec ~/.env/config/i3/screen/single.sh
+
+# Two displays
+bindsym $mod+x exec ~/.env/config/i3/screen/double.sh
+
+# Three displays
+bindsym $mod+c exec ~/.env/config/i3/screen/triple.sh
 
 # Light mode
-bindsym $mod+x exec ~/.env/config/i3/wal/light.sh
+bindsym $mod+m exec ~/.env/config/i3/wal/light.sh
 
 # Dark mode
-bindsym $mod+c exec ~/.env/config/i3/wal/dark.sh
+bindsym $mod+n exec ~/.env/config/i3/wal/dark.sh
 
 # Move workspace left
 bindsym $mod+Shift+bracketleft move workspace to output left

@@ -1,5 +1,4 @@
-all: env git vim alacritty i3 polybar wal-polybar
-osx: nvim git yabai skhd
+all: env git nvim alacritty i3 polybar xmodmap picom
 
 # Make variables.
 CONFIG:= ${HOME}/.env/config
