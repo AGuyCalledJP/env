@@ -3,6 +3,10 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
+
+import:
+  - ~/.cache/wal/colors-alacritty.yaml
+
 env:
   # TERM variable
   #
@@ -13,7 +17,7 @@ env:
   TERM: xterm-256color
 
 window:
-  padding:
+  padding: 
     x: 6
     y: 6
 
@@ -43,21 +47,21 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: CaskaydiaCoveNerdFont
+    family: CaskaydiaCove Nerd Font
 
   bold:
-    family: CaskaydiaCoveNerdFont
+    family: CaskaydiaCove Nerd Font
     style: Bold
 
   italic:
-    family: CaskaydiaCoveNerdFont
+    family: CaskaydiaCove Nerd Font
     style: Italic
 
   bold_italic:
-    family: CaskaydiaCoveNerdFont
+    family: CaskaydiaCove Nerd Font
     style: Bold Italic
 
-  size: 12.0
+  size: 14.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.

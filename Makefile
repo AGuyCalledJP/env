@@ -1,4 +1,4 @@
-all: env git nvim alacritty i3 polybar xmodmap picom
+all: env git nvim alacritty i3 polybar xmodmap picom wal yabai skhd zsh
 
 # Make variables.
 CONFIG:= ${HOME}/.env/config
@@ -50,3 +50,15 @@ xmodmap:
 
 picom:
 	@ln -s ${CONFIG}/picom/ ${HOME}/.config/
+
+wal:
+	@ln -s ${CONFIG}/wal/templates ${HOME}/.config/wal/templates
+
+yabai:
+	@ln -s ${CONFIG}/yabai/ ${HOME}/.config/
+
+skhd:
+	@ln -s ${CONFIG}/skhd ${HOME}/.config/
+
+zsh:
+	@ln -s ${CONFIG}/zsh/zshrc ${HOME}/.zshrc
