@@ -1,4 +1,4 @@
-all: env git nvim alacritty i3 polybar xmodmap picom wal yabai skhd zsh
+all: env git nvim alacritty i3 polybar xmodmap picom wal yabai skhd zsh tmux
 
 # Make variables.
 CONFIG:= ${HOME}/.env/config
@@ -62,3 +62,9 @@ skhd:
 
 zsh:
 	@ln -s ${CONFIG}/zsh/zshrc ${HOME}/.zshrc
+
+spacebar:
+	@ln -s ${CONFIG}/spacebar ${HOME}/.config
+
+tmux:
+	@ln -s ${CONFIG}/tmux/tmuxconf ${HOME}/.tmux.conf

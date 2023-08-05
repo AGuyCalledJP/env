@@ -30,17 +30,26 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
 else
-    export EDITOR='mvim'
+    export EDITOR='nvim'
 fi
 
+(cat ~/.cache/wal/sequences &)
+
 if [[ -x $(which wal) ]]; then
-    wal -i ${HOME}/.env/config/backgrounds/ppf.png -n
+   if [[ 0 -eq $(cat ${HOME}/.env/config/lightordark) ]]
+        then
+            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/forest.jpg -n -q 
+        else
+            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/forest.jpg -n -q  -l
+    fi
 fi
+
 
 # Aliases
 alias c='clear'
 alias h='history'
 alias n='nvim'
+alias t='tmux'
 
 #Plugins
 plugins=(git zsh-autosuggestions)
@@ -50,4 +59,11 @@ source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
 

@@ -70,9 +70,7 @@ font:
     y: 1
 
 shell:
-  program: /bin/bash
-  args:
-    - --login
+  program: /bin/zsh
 
 key_bindings:
     # (Windows, Linux, and BSD only)

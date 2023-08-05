@@ -98,3 +98,16 @@ shift + lctrl + alt - r : \
 # make window nati e fullscreen
 alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# shift display focus
+shift + cmd - h : yabai -m display --focus 2
+shift + cmd - l : yabai -m display --focus 1
+
+# set light or dark mode
+alt - n : "${HOME}"/.env/config/skhd/wal/light.sh
+alt - m : "${HOME}"/.env/config/skhd/wal/dark.sh
+
+
+
+
+
