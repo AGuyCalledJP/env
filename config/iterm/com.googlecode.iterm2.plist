@@ -4,16 +4,6 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>Control</key>
 	<integer>7</integer>
 	<key>Default Bookmark Guid</key>
@@ -22,7 +12,7 @@
 	<true/>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x48-0x60000-0x4</key>
+		<key>0x4a-0x60000-0x26</key>
 		<dict>
 			<key>Action</key>
 			<integer>33</integer>
@@ -33,7 +23,7 @@
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
-		<key>0x4c-0x60000-0x25</key>
+		<key>0x4b-0x60000-0x28</key>
 		<dict>
 			<key>Action</key>
 			<integer>34</integer>
@@ -44,7 +34,7 @@
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
-		<key>0x68-0x40000-0x4</key>
+		<key>0x6a-0x40000-0x26</key>
 		<dict>
 			<key>Action</key>
 			<integer>2</integer>
@@ -55,7 +45,7 @@
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
-		<key>0x6c-0x40000-0x25</key>
+		<key>0x6b-0x40000-0x28</key>
 		<dict>
 			<key>Action</key>
 			<integer>0</integer>

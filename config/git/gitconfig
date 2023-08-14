@@ -1,10 +1,10 @@
 [user]
     name = Jared Polonitza
-    email = jpolonitza@primetrust.com
+    email = jaredp1234@gmail.com
     signingKey = E6689B8190C434D2
 [core]
     editor = vim
-    hooksPath = /home/aguycalledjp/.git/hooks
+    #hooksPath = /home/aguycalledjp/.git/hooks
 [alias]
     st = status
     s = switch

@@ -38,9 +38,9 @@ fi
 if [[ -x $(which wal) ]]; then
    if [[ 0 -eq $(cat ${HOME}/.env/config/lightordark) ]]
         then
-            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/forest.jpg -n -q 
+          wal --backend haishoku -i ${HOME}/.env/config/backgrounds/$(cat ${HOME}/.env/config/bg-image) -n -q 
         else
-            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/forest.jpg -n -q  -l
+            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/$(cat ${HOME}/.env/config/bg-image) -n -q  -l
     fi
 fi
 
@@ -52,7 +52,7 @@ alias n='nvim'
 alias t='tmux'
 
 #Plugins
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions kubectl)
 source $ZSH/oh-my-zsh.sh
 
 #Star Ship
