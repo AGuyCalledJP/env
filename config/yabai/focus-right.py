@@ -51,6 +51,10 @@ windows_in_current_space = subprocess.run(
 
 windows_in_current_space = json.loads(windows_in_current_space.stdout)
 
+if len(windows_in_current_space) <= 0:
+    subprocess.run(DISPLAY_RIGHT)
+    sys.exit()
+
 focused_window = None
 for window in windows_in_current_space:
     if window["has-focus"]:
