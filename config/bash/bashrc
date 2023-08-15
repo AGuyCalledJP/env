@@ -49,7 +49,13 @@ if [ -x $(which thefuck) ]; then                                    # Enable the
 fi
 
 if [ -x $(which wal) ]; then                                        # Enable wal.
-  wal -i ~/.env/config/backgrounds/forest.jpg
+    if [ $(cat ${HOME}/.env/config/lightordark) -eq 1 ]; then
+    wal -i "$(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99 | head -1)" -q -n -l
+    echo 1 > ${HOME}/.env/config/lightordark
+  else
+    wal -i "$(grep file ${HOME}/.config/nitrogen/bg-saved.cfg | cut -c 6-99 | head -1)" -q -n
+    echo 0 > ${HOME}/.env/config/lightordark
+  fi
 fi
 
 export EDITOR="vim"
@@ -57,6 +63,7 @@ export EDITOR="vim"
 #export $(xargs < ~/Documents/.env)
 
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="/home/aguycalledjp/.cargo/bin:$PATH"
 
 eval "$(ssh-agent)"
 ssh-add
@@ -69,3 +76,4 @@ export GPG_TTY=$(tty)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /home/aguycalledjp/perl5/perlbrew/etc/bashrc

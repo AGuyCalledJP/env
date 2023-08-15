@@ -13,7 +13,7 @@ set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:CaskaydiaCoveNerdFont 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -108,10 +108,13 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Brightness up
-bindsym $mod+m exec ~/.env/config/i3/brightness/up.sh
+bindsym $mod+Shift+m exec ~/.env/config/i3/brightness/up.sh
 
 # Brightness down
-bindsym $mod+n exec ~/.env/config/i3/brightness/down.sh
+bindsym $mod+Shift+n exec ~/.env/config/i3/brightness/down.sh
+
+# Desktop dual display
+bindsym $mod+Shift+z exec ~/.env/config/i3/screen/desk.sh
 
 # One display
 bindsym $mod+z exec ~/.env/config/i3/screen/single.sh
@@ -121,6 +124,12 @@ bindsym $mod+x exec ~/.env/config/i3/screen/double.sh
 
 # Three displays
 bindsym $mod+c exec ~/.env/config/i3/screen/triple.sh
+
+# Light mode
+bindsym $mod+m exec ~/.env/config/i3/wal/light.sh
+
+# Dark mode
+bindsym $mod+n exec ~/.env/config/i3/wal/dark.sh
 
 # Move workspace left
 bindsym $mod+Shift+bracketleft move workspace to output left
@@ -204,6 +213,13 @@ client.placeholder      $two    $two    $seven  $two      $two
 
 client.background       $bg
 
+default_border pixel 0
+default_floating_border pixel 0
+
+gaps inner 8
+
+gaps outer 8
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -223,4 +239,4 @@ bar {
     }
 }
 
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.env/config/i3/launch.sh

@@ -1,1 +1,0 @@
-/home/aguycalledjp/.env/config/vim
