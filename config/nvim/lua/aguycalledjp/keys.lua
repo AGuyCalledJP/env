@@ -9,8 +9,8 @@ map('n', '<C-s>', [[:w<cr>]], {})
 map('n', '<C-b>', [[:NvimTreeToggle<cr>]], {})
 
 -- Toggle telescope
-map('n', '<C-p>', [[:Telescope find_files<cr>]], {})
-map('n', '<C-f>', [[:Telescope live_grep<cr>]], {})
+map('n', '<S-F2>', [[:Telescope find_files<cr>]], {})
+map('n', '<S-F1>', [[:Telescope live_grep<cr>]], {})
 
 -- Barbar
 local opts = { noremap = true, silent = true }

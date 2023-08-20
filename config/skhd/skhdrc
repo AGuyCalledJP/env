@@ -1,5 +1,5 @@
 # opens iterm
-alt - return : "${HOME}"/.env/config/yabai/open-iterm2.sh
+alt - return : "${HOME}"/.env/config/scripts/open-iterm2.sh
 
 # open chrome
 shift + alt - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk
@@ -8,10 +8,14 @@ shift + alt - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 alt - w : yabai -m window --close
 
 # change focus
-alt - h : "${HOME}"/.env/config/yabai/focus-left.py
+alt - h : yabai -m window --focus west || yabai -m display focus 1
 alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : "${HOME}"/.env/config/yabai/focus-right.py
+alt - k : yabai -m window --focus north 
+alt - l : yabai -m window --focus east || yabai -m display focus 2
+
+# move through tabs
+alt + shift - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt + shift - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # (alt) change focus (using arrow keys)
 alt - left  : yabai -m window --focus west
@@ -21,8 +25,6 @@ alt - right : yabai -m window --focus east
 
 # shift window in current workspace
 alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
-alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
 alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # alternatively, use the arrow keys
@@ -100,6 +102,16 @@ alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # set light or dark mode
-alt - n : "${HOME}"/.env/config/skhd/wal/light.sh
-alt - m : "${HOME}"/.env/config/skhd/wal/dark.sh
+alt + shift - n : "${HOME}"/.env/config/scripts/light.sh
+alt + shift - m : "${HOME}"/.env/config/scripts/dark.sh
 
+# create a stack
+alt - s : yabai -m window --stack next
+alt + shift - s : yabai -m window --stack prev
+
+# cycle between tabs 
+# focus the prev window in a stack
+alt - n : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+
+# focus the next window in a stack
+alt - m : yabai -m window --focus stack.next || yabai -m window --focus stack.first

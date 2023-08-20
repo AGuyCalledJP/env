@@ -27,11 +27,11 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 export LANG=en_US.UTF-8
 
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='vim'
-else
-    export EDITOR='nvim'
-fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#    export EDITOR='vim'
+#else
+#    export EDITOR='nvim'
+#fi
 
 (cat ~/.cache/wal/sequences &)
 
@@ -50,10 +50,17 @@ alias c='clear'
 alias h='history'
 alias n='nvim'
 alias t='tmux'
+alias td='tmux detach'
+alias tks='tmux kill-server'
 
 #Plugins
 plugins=(git zsh-autosuggestions kubectl)
 source $ZSH/oh-my-zsh.sh
+
+bindkey -s '^[[1;2P' "~/.env/config/scripts/tmux-project-launch.sh^M"
+bindkey -s '^[[1;2Q' "~/.env/config/scripts/nvim-project-launch.sh $(pwd)^M"
+bindkey -s '^[[1;2R' "~/.env/config/scripts/launch-terminal.py^M"
+bindkey -s '^[[1;2S' "~/.env/config/scripts/polo-code.sh^M"
 
 #Star Ship
 eval "$(starship init zsh)"
@@ -66,4 +73,5 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+
 

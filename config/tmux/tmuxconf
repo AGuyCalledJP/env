@@ -1,3 +1,11 @@
+set -ga terminal-overrides ",screen-256color*:Tc"
+set-option -g default-terminal "screen-256color"
+set -s set-clipboard on
+set -s escape-time 0
+
+set -s extended-keys on
+set -as terminal-features 'xterm*:extkeys'
+
 # start window indexing at one instead of zero
 set -g base-index 1
 set -g pane-base-index 1
@@ -9,8 +17,8 @@ set -g mouse on
 set -g status-left " #S "
 set -g status-left-length 13
 
-set -g window-status-current-format "#{?window_last_flag,`, }#{?window_zoomed_flag,[,}#I:#W#{?window_zoomed_flag,],}#{?window_last_flag,`, }"
-set -g window-status-format "#{?window_last_flag,`, }#{?window_zoomed_flag,[,}#I:#W#{?window_zoomed_flag,],}#{?window_last_flag,`, }"
+set -g window-status-current-format "#{?window_zoomed_flag,[,}#I#{?window_zoomed_flag,],}"
+set -g window-status-format "#{?window_zoomed_flag,[,}#W#{?window_zoomed_flag,],}"
 
 # #h hostshort , #S session , #W window , #T pane name
 wg_prfx=" #{?client_prefix,<Prefix>,}"  # prefix indicator widget
@@ -26,6 +34,5 @@ set -g prefix  C-Space
 bind C-Space send-prefix
 
 # reload config file (change file location to your the tmux.conf you want to use)
-bind r source-file ~/.tmux.conf
-
+bind r source-file ~/.env/config/tmux/tmuxconf
 

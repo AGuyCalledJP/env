@@ -1,4 +1,4 @@
-all: env git nvim alacritty i3 polybar xmodmap picom wal yabai skhd zsh tmux
+all: env git nvim alacritty i3 polybar xmodmap picom wal yabai skhd zsh tmux hammerspoon iterm
 
 # Make variables.
 CONFIG:= ${HOME}/.env/config
@@ -68,3 +68,9 @@ spacebar:
 
 tmux:
 	@ln -s ${CONFIG}/tmux/tmuxconf ${HOME}/.tmux.conf
+
+hammerspoon:
+	@ln -s ${CONFIG}/hammerspoon/init.lua ${HOME}/.hammerspoon/init.lua
+
+iterm:
+	@ln -s ${CONFIG}/scripts/iterm2-spawn-window.py ${HOME}/Library/Application\ Support/iTerm2/Scripts/AutoLaunch
