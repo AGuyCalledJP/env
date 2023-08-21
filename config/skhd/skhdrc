@@ -8,10 +8,10 @@ shift + alt - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ C
 alt - w : yabai -m window --close
 
 # change focus
-alt - h : yabai -m window --focus west || yabai -m display focus 1
+alt - h : "${HOME}"/.env/config/scripts/focus-left.py
 alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north 
-alt - l : yabai -m window --focus east || yabai -m display focus 2
+alt - l : "${HOME}"/.env/config/scripts/focus-right.py
 
 # move through tabs
 alt + shift - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first
