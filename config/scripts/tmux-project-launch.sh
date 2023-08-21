@@ -29,13 +29,20 @@ if ! tmux has-session -t=$selected_name 2> /dev/null; then
     exit 0
 fi
 
+session_count=$(tmux ls | grep $selected_name | wc -l | xargs)
+attached_session_count=$(tmux ls | grep $selected_name | grep attached | wc -l | xargs)
 
-session_to_use=$( \
-  (tmux ls | grep $selected_name && echo "new session") \
-  | fzf)
+min_count=$(( session_count < attached_session_count ? session_count : attached_session_count ))
+
+if [[ $min_count -le $attached_session_count ]]; then
+  session_to_use=$(tmux ls | grep $selected_name | grep -v attached | sort | head -n 1)
+else
+  session_to_use=$( \
+    (tmux ls | grep $selected_name && echo "new session") \
+    | fzf)
+fi 
 
 selected_session=$(echo $session_to_use | cut -d ":" -f1)
-session_count=$(tmux ls | grep $selected_name | wc -l | xargs)
 
 if [[ $selected_session == "new session" ]]; then
     new_session_name=$(echo $selected_name)_$(echo $session_count)
