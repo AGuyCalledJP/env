@@ -9,7 +9,7 @@ async def main(connection):
 
     await iterm2.Window.async_create(
         connection, 
-        profile="polo-code"
+        profile="ps-code-no-mux"
     )
 
 iterm2.run_until_complete(main, True)

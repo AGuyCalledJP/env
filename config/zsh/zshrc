@@ -40,7 +40,7 @@ if [[ -x $(which wal) ]]; then
         then
           wal --backend haishoku -i ${HOME}/.env/config/backgrounds/$(cat ${HOME}/.env/config/bg-image) -n -q 
         else
-            wal --backend haishoku -i ${HOME}/.env/config/backgrounds/$(cat ${HOME}/.env/config/bg-image) -n -q  -l
+          wal --backend haishoku -i ${HOME}/.env/config/backgrounds/$(cat ${HOME}/.env/config/bg-image) -n -q  -l
     fi
 fi
 
@@ -53,14 +53,19 @@ alias t='tmux'
 alias td='tmux detach'
 alias tks='tmux kill-server'
 
+
 #Plugins
 plugins=(git zsh-autosuggestions kubectl)
 source $ZSH/oh-my-zsh.sh
 
-bindkey -s '^[[1;2P' "~/.env/config/scripts/tmux-project-launch.sh^M"
-bindkey -s '^[[1;2Q' "~/.env/config/scripts/nvim-project-launch.sh $(pwd)^M"
-bindkey -s '^[[1;2R' "~/.env/config/scripts/launch-terminal.py^M"
-bindkey -s '^[[1;2S' "~/.env/config/scripts/polo-code.sh^M"
+bindkey -s '^[[1;2P' "~/.env/config/scripts/tmux-project-launch.sh^M" # ctrl f for find project 
+bindkey -s '^[[1;2Q' "~/.env/config/scripts/nvim-project-launch.sh $(pwd)^M" # ctrl p to open nvim on file
+bindkey -s '^[[1;2T' "~/.env/config/scripts/tmux-session-select.sh^M" # ctrl t to choose a tmux session to attach too
+bindkey -s '^[[1;2S' "~/.env/config/scripts/polo-code.sh^M" # ctrl shift 6 to launch a tmux term
+bindkey -s '^[[1;2R' "~/.env/config/scripts/launch-terminal.py^M" # ctrl shift 7 to launch ps-code
+bindkey -s '^[[1;5R' "~/.env/config/scripts/launch-terminal-no-mux.py^M" # ctrl shift 8 to add non tmux term
+
+
 
 #Star Ship
 eval "$(starship init zsh)"
