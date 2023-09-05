@@ -51,4 +51,3 @@ map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], op
 
 -- Change file to executable from nvim
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
-

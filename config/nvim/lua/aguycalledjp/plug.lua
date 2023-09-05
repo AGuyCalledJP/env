@@ -63,6 +63,7 @@ return require('packer').startup(function(use)
   use "folke/trouble.nvim"
   use "ggandor/leap.nvim"
   use "lewis6991/gitsigns.nvim"
+  use "ludovicchabant/vim-gutentags"
   use {
     'numToStr/Comment.nvim',
     config = function()
