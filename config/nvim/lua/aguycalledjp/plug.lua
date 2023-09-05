@@ -7,9 +7,7 @@ local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
         "git",
-        "clone",
-        "--depth",
-        "1",
+        "clone", "--depth", "1",
         "https://github.com/wbthomason/packer.nvim",
         install_path,
     }
@@ -62,6 +60,15 @@ return require('packer').startup(function(use)
   use "romgrk/barbar.nvim" -- icons for pretty things
   use "mbbill/undotree"
   use "nvim-treesitter/playground"
+  use "folke/trouble.nvim"
+  use "ggandor/leap.nvim"
+  use "lewis6991/gitsigns.nvim"
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use {
       "oncomouse/lushwal",
       requires = {

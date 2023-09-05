@@ -1,7 +1,7 @@
 [user]
     name = Jared Polonitza
-    #email = jared_polonitza@apple.com
-    email = jaredp1234@gmail.com
+    email = jared_polonitza@apple.com
+    #email = jaredp1234@gmail.com
     signingKey = E6689B8190C434D2
 [core]
     editor = vim
