@@ -13,6 +13,10 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north 
 alt - l : "${HOME}"/.env/config/scripts/focus-right.py
 
+# create a stack
+alt + shift - m : yabai -m window --stack next
+alt + shift - n : yabai -m window --stack prev
+
 # move through tabs
 alt + shift - j : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 alt + shift - k : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
@@ -102,9 +106,5 @@ alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # set light or dark mode
-alt + shift - n : "${HOME}"/.env/config/scripts/light.sh
-alt + shift - m : "${HOME}"/.env/config/scripts/dark.sh
-
-# create a stack
-alt - n : yabai -m window --stack next
-alt - m : yabai -m window --stack prev
+alt - n : "${HOME}"/.env/config/scripts/light.sh
+alt - m : "${HOME}"/.env/config/scripts/dark.sh
