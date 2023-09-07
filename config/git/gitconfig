@@ -11,16 +11,18 @@
     s = switch
     b = branch
     cp = cherry-pick
-    c = cherry
     co = checkout
     cob = checkout -b 
     ci = commit
+    cia = commit --amend
+    cian = commit --amend --no-edit
     ps = push
     l = log
     w = whatchanged
     lol = log --oneline
     f = fetch
-    rh = reset -- hard
+    rh = reset --hard
+    rs = reset --soft
 [init]
     defaultBranch = main
 [commit]
