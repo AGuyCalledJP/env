@@ -598,6 +598,7 @@ focused_window	config/scripts/focus-left.py	/^        focused_window = window$/;
 focused_window	config/scripts/focus-left.py	/^focused_window = None$/;"	v
 focused_window	config/scripts/focus-right.py	/^        focused_window = window$/;"	v
 focused_window	config/scripts/focus-right.py	/^focused_window = None$/;"	v
+follow_url_func	config/nvim/after/plugin/obsidian.lua	/^    follow_url_func = function(url)$/;"	f
 g:colors_name	config/nvim/colors/lushwal.vim	/^let g:colors_name = 'lushwal'$/;"	v
 get_setup	config/nvim/lua/aguycalledjp/plug.lua	/^function get_setup(name)$/;"	f
 get_tree_size	config/nvim/after/plugin/barbar.lua	/^local function get_tree_size()$/;"	f

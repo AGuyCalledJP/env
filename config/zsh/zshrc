@@ -46,6 +46,7 @@ alias n='nvim'
 alias t='tmux'
 alias td='tmux detach'
 alias tks='tmux kill-server'
+alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300 --profile blobby'
 
 
 #Plugins

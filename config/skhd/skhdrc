@@ -106,12 +106,5 @@ alt + shift - n : "${HOME}"/.env/config/scripts/light.sh
 alt + shift - m : "${HOME}"/.env/config/scripts/dark.sh
 
 # create a stack
-#alt - s : yabai -m window --stack next
-#alt + shift - s : yabai -m window --stack prev
-
-# cycle between tabs 
-# focus the prev window in a stack
-alt - n : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-
-# focus the next window in a stack
-alt - m : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+alt - n : yabai -m window --stack next
+alt - m : yabai -m window --stack prev

@@ -64,6 +64,7 @@ return require('packer').startup(function(use)
   use "ggandor/leap.nvim"
   use "lewis6991/gitsigns.nvim"
   use "ludovicchabant/vim-gutentags"
+  use 'epwalsh/obsidian.nvim'
   use {
     'numToStr/Comment.nvim',
     config = function()
@@ -106,11 +107,9 @@ return require('packer').startup(function(use)
     config = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 300
-      require("which-key").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("which-key").setup{}
     end
   }
 end)
+
+
