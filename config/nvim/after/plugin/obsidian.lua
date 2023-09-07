@@ -3,7 +3,7 @@
     log_level = vim.log.levels.DEBUG,
 
     daily_notes = {
-      folder = "notes/dailies",
+      folder = "dailies",
       date_format = "%Y-%m-%d"
     },
 
