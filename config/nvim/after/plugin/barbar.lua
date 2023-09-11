@@ -2,7 +2,7 @@ vim.g.barbar_auto_setup = false -- disable auto-setup
 
 require'barbar'.setup {
   animation = true,
-  auto_hide = false,
+  auto_hide = true,
   tabpages = true,
   clickable = true,
   focus_on_close = 'previous',
@@ -86,7 +86,6 @@ require'barbar'.setup {
 
   -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
   -- where X is the buffer number. But only a static string is accepted here.
-  no_name_title = Blank,
 }
 
 local bufferline_api = require('bufferline.api')

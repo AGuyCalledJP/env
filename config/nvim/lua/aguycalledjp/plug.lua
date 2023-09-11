@@ -25,14 +25,14 @@ vim.cmd [[
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end                                                                                                                                              
-]]                                                                                                                                                         
-                                                                                                                                                           
+]]
+
 -- Use a protected call so we don't error out on first use                                                                                                 
-local status_ok, packer = pcall(require, "packer")                                                                                                         
-if not status_ok then                                                                                                                                      
-    return                                                                                                                                                 
-end                                                                                                                                                        
-                                                                                                                                                           
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+    return
+end
+
 -- Have packer use a popup window                                                                                                                          
 packer.init {
     display = {
