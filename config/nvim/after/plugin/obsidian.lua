@@ -37,3 +37,9 @@
     -- Accepted values are "current", "hsplit" and "vsplit"
     open_notes_in = "current"
 })
+
+vim.keymap.set("n", "<leader>on", ":ObsidianNew ", {})
+vim.keymap.set("n", "<leader>ofl", ":ObsidianFollowLink<cr>", {})
+vim.keymap.set("n", "<leader>obl", ":ObsidianBacklinks<cr>", {})
+vim.keymap.set("n", "<leader>ot", ":ObsidianToday<cr>", {})
+vim.keymap.set("n", "<leader>oy", ":ObsidianYesterday<cr>", {})

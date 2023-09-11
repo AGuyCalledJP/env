@@ -24,6 +24,7 @@
     f = fetch
     rh = reset --hard
     rs = reset --soft
+    conflicts = diff --name-only --diff-filter=U
 [init]
     defaultBranch = main
 [commit]

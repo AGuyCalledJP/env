@@ -43,10 +43,17 @@ fi
 alias c='clear'
 alias h='history'
 alias n='nvim'
+alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300 --profile blobby'
+
+#Make tmux do tricks
 alias t='tmux'
 alias td='tmux detach'
-alias tks='tmux kill-server'
-alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300 --profile blobby'
+alias tks='tmux kill-session'
+alias tkn='tmux kill-session -a'
+alias tka='tmux kill-server'
+
+#Git related shenanigans
+alias conflicts='nvim $(git conflicts | uniq)'
 
 
 #Plugins
