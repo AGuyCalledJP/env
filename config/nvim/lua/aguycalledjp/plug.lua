@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "kyazdani42/nvim-web-devicons" -- icons
   use "kyazdani42/nvim-tree.lua" -- File tree
-  use "DanilaMihailov/beacon.nvim" -- cursor jump
   use "nvim-lualine/lualine.nvim" -- statusline
   use "nvim-telescope/telescope.nvim" -- fuzzy finder
   use "majutsushi/tagbar" -- code structure
@@ -78,11 +77,10 @@ return require('packer').startup(function(use)
         {"rktjmp/shipwright.nvim", opt = true },
       }
   }
-  use "theprimeagen/harpoon"
   use { 'AlphaTechnolog/pywal.nvim', as = 'pywal' }
   use {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v2.x',
     requires = {
         -- LSP Support
         {'neovim/nvim-lspconfig'},

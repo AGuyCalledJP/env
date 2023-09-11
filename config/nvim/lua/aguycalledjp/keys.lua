@@ -2,29 +2,10 @@ vim.g.mapleader = " "
 
 local map = vim.api.nvim_set_keymap
 
--- Save
-map('n', '<C-s>', [[:w<cr>]], {})
-
--- Toggle nvim-tree
-map('n', '<C-b>', [[:NvimTreeToggle<cr>]], {})
-
--- Toggle telescope
-map('n', '<S-F2>', [[:Telescope find_files<cr>]], {})
-map('n', '<S-F1>', [[:Telescope live_grep<cr>]], {})
-
--- Barbar
 local opts = { noremap = true, silent = true }
 
--- Move to previous/next
-map('n', '<C-h>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<C-l>', '<Cmd>BufferNext<CR>', opts)
-
--- Re-order to previous/next
-map('n', '<C-S-h>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<C-S-l>', '<Cmd>BufferMoveNext<CR>', opts)
-
--- Close buffer
-map('n', '<C-q>', '<Cmd>BufferClose<CR>', opts)
+-- Save
+map('n', '<C-s>', [[:w<cr>]], {})
 
 -- Move highlighted lines
 map("v", "J", ":m '>+1<CR>gv=gv", opts)

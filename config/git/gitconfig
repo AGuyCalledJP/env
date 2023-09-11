@@ -6,6 +6,7 @@
 [core]
     editor = vim
     hooksPath = /home/aguycalledjp/.git/hooks
+	excludesfile = /Users/polo/.gitignore
 [alias]
     st = status
     s = switch

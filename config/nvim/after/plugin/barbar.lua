@@ -108,3 +108,16 @@ end)
 nvim_tree_events.subscribe('TreeClose', function()
   bufferline_api.set_offset(0)
 end)
+
+local opts = { noremap = true, silent = true }
+
+-- Move to previous/next
+vim.keymap.set('n', '<C-h>', '<Cmd>BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<C-l>', '<Cmd>BufferNext<CR>', opts)
+
+-- Re-order to previous/next
+vim.keymap.set('n', '<C-S-h>', '<Cmd>BufferMovePrevious<CR>', opts)
+vim.keymap.set('n', '<C-S-l>', '<Cmd>BufferMoveNext<CR>', opts)
+
+-- Close buffer
+vim.keymap.set('n', '<C-q>', '<Cmd>BufferClose<CR>', opts)
