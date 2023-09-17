@@ -60,9 +60,8 @@ return require('packer').startup(function(use)
   use "mbbill/undotree"
   use "nvim-treesitter/playground"
   use "folke/trouble.nvim"
-  use "ggandor/leap.nvim"
+  use "folke/flash.nvim"
   use "lewis6991/gitsigns.nvim"
-  use "ludovicchabant/vim-gutentags"
   use 'epwalsh/obsidian.nvim'
   use {
     'numToStr/Comment.nvim',

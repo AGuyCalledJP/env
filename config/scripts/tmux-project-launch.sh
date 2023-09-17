@@ -4,7 +4,13 @@ if [[ $# -eq 1 ]]; then
     selected=$1
 else
   selected=$( \
-    (find ~/personal ~/work ~/work/newlands ~/work/ect-infra/ -maxdepth 1 -mindepth 1 -type d && \
+    (find \
+    ~/personal \
+    ~/work \
+    ~/work/rita \
+    ~/work/newlands \
+    ~/work/ect-infra/ \
+    -maxdepth 1 -mindepth 1 -type d && \
     find ~/ -name ".env" -maxdepth 1 -type d) \
     | fzf --preview='tree -C {} | head -n 50' --preview-window=70%,border-double,top)
 fi

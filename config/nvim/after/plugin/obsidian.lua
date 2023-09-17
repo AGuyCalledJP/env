@@ -10,7 +10,7 @@
     -- Optional, key mappings.
     mappings = {
       -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      ["fl"] = require("obsidian.mapping").gf_passthrough(),
+      ["<leader>fl"] = require("obsidian.mapping").gf_passthrough(),
     },
 
     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
@@ -39,7 +39,6 @@
 })
 
 vim.keymap.set("n", "<leader>on", ":ObsidianNew ", {})
-vim.keymap.set("n", "<leader>ofl", ":ObsidianFollowLink<cr>", {})
 vim.keymap.set("n", "<leader>obl", ":ObsidianBacklinks<cr>", {})
 vim.keymap.set("n", "<leader>ot", ":ObsidianToday<cr>", {})
 vim.keymap.set("n", "<leader>oy", ":ObsidianYesterday<cr>", {})

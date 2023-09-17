@@ -31,3 +31,9 @@
     gpgsign = false
 [push]
     default = current
+[url "ssh://git@github.pie.apple.com/"]
+	insteadOf = https://github.pie.apple.com/
+[url "git@github.pie.apple.com:"]
+	insteadOf = https://github.pie.apple.com/
+[url "ssh://git@stash.sd.apple.com/"]
+	insteadOf = https://stashweb.sd.apple.com/scm/
