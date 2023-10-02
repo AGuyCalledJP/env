@@ -2866,6 +2866,8 @@ Copy</string>
 	<true/>
 	<key>RightCommand</key>
 	<integer>8</integer>
+	<key>Selection Respects Soft Boundaries</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

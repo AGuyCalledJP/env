@@ -7,12 +7,6 @@
       date_format = "%Y-%m-%d"
     },
 
-    -- Optional, key mappings.
-    mappings = {
-      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-      ["<leader>fl"] = require("obsidian.mapping").gf_passthrough(),
-    },
-
     -- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
     -- URL it will be ignored but you can customize this behavior here.
     follow_url_func = function(url)
@@ -21,7 +15,6 @@
       -- vim.fn.jobstart({"xdg-open", url})  -- linux
     end,
 
-    -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
     open_app_foreground = false,
 
     -- Optional, by default commands like `:ObsidianSearch` will attempt to use
@@ -42,3 +35,10 @@ vim.keymap.set("n", "<leader>on", ":ObsidianNew ", {})
 vim.keymap.set("n", "<leader>obl", ":ObsidianBacklinks<cr>", {})
 vim.keymap.set("n", "<leader>ot", ":ObsidianToday<cr>", {})
 vim.keymap.set("n", "<leader>oy", ":ObsidianYesterday<cr>", {})
+vim.keymap.set("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
