@@ -5,7 +5,7 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 -- Save
-map('n', '<C-s>', [[:w<cr>]], {})
+map("n", "<C-s>", [[:w<cr>]], {})
 
 -- Move highlighted lines
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
@@ -25,8 +25,6 @@ map("n", "N", "Nzzzv", opts)
 -- Allow paste without losing paste buffer
 map("x", "<leader>p", [["_dP]], opts)
 
--- map("n", "<C-Q>", "[[:qa<cr>]]", opts)
-
 -- Allow replace of current word
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
@@ -35,3 +33,7 @@ map("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
 
 -- Send quick terminal command
 vim.keymap.set("n", "<leader>t", ":!", {})
+
+-- Add yank to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
