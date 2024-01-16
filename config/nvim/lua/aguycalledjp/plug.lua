@@ -45,30 +45,44 @@ packer.init({
 })
 
 return require("packer").startup(function(use)
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("MunifTanjim/nui.nvim")
+	use("RRethy/vim-illuminate")
+	use("Yggdroot/indentLine") -- see indentation
+	use("epwalsh/obsidian.nvim")
+	use("folke/flash.nvim")
+	use("folke/noice.nvim")
+	use("folke/trouble.nvim")
+	use("junegunn/gv.vim") -- commit history
 	use("kyazdani42/nvim-web-devicons") -- icons
-	use("kyazdani42/nvim-tree.lua") -- File tree
+	use("lewis6991/gitsigns.nvim")
+	use("majutsushi/tagbar") -- code structure
+	use("mbbill/undotree")
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lualine/lualine.nvim") -- statusline
 	use("nvim-telescope/telescope.nvim") -- fuzzy finder
-	use("majutsushi/tagbar") -- code structure
-	use("Yggdroot/indentLine") -- see indentation
-	use("tpope/vim-fugitive") -- git integration
-	use("junegunn/gv.vim") -- commit history
-	use("windwp/nvim-autopairs") -- auto close brackets, etc.
 	use("nvim-treesitter/nvim-treesitter") -- better syntax highlighting
-	use("romgrk/barbar.nvim") -- icons for pretty things
-	use("mbbill/undotree")
+	use("nvim-treesitter/nvim-treesitter-context") -- better syntax highlighting
 	use("nvim-treesitter/playground")
-	use("folke/trouble.nvim")
-	use("folke/flash.nvim")
-	use("lewis6991/gitsigns.nvim")
-	use("epwalsh/obsidian.nvim")
-	use("stevearc/conform.nvim")
-	use("MunifTanjim/nui.nvim")
 	use("rcarriga/nvim-notify")
-	use("folke/noice.nvim")
+	use("romgrk/barbar.nvim") -- icons for pretty things
+	use("simrat39/symbols-outline.nvim")
+	use("stevearc/aerial.nvim")
+	use("stevearc/conform.nvim")
+	use("tpope/vim-fugitive") -- git integration
+	use("wbthomason/packer.nvim") -- Have packer manage itself
+	use("windwp/nvim-autopairs") -- auto close brackets, etc.
+	use("yorickpeterse/nvim-window")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		},
+	})
 	use({
 		"numToStr/Comment.nvim",
 		config = function()
