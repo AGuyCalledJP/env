@@ -24,10 +24,12 @@ return require("lazy").setup({
 	"stevearc/conform.nvim",
 	"tpope/vim-fugitive",
 	"windwp/nvim-autopairs",
+	"rcarriga/nvim-dap-ui",
 	{ "AlphaTechnolog/pywal.nvim", name = "pywal" },
 	{ "epwalsh/obsidian.nvim", lazy = true },
 	{ "simrat39/symbols-outline.nvim", lazy = true },
 	{ "stevearc/aerial.nvim", lazy = true },
+	{ "mfussenegger/nvim-dap", lazy = true },
 	{ "yorickpeterse/nvim-window", lazy = true },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
