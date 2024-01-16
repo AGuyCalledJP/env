@@ -1,106 +1,59 @@
 -- [[ plug.lua ]]
 
-local fn = vim.fn
-
--- Automatically install packer
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	PACKER_BOOTSTRAP = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
-	print("Installing packer close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
-end
-
-function get_setup(name)
-	return string.format('require("user/%s")', name)
-end
-
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd([[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end                                                                                                                                              
-]])
-
--- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-	return
-end
-
--- Have packer use a popup window
-packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
-})
-
-return require("packer").startup(function(use)
-	use("MunifTanjim/nui.nvim")
-	use("RRethy/vim-illuminate")
-	use("Yggdroot/indentLine") -- see indentation
-	use("epwalsh/obsidian.nvim")
-	use("folke/flash.nvim")
-	use("folke/noice.nvim")
-	use("folke/trouble.nvim")
-	use("junegunn/gv.vim") -- commit history
-	use("kyazdani42/nvim-web-devicons") -- icons
-	use("lewis6991/gitsigns.nvim")
-	use("majutsushi/tagbar") -- code structure
-	use("mbbill/undotree")
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lualine/lualine.nvim") -- statusline
-	use("nvim-telescope/telescope.nvim") -- fuzzy finder
-	use("nvim-treesitter/nvim-treesitter") -- better syntax highlighting
-	use("nvim-treesitter/nvim-treesitter-context") -- better syntax highlighting
-	use("nvim-treesitter/playground")
-	use("rcarriga/nvim-notify")
-	use("romgrk/barbar.nvim") -- icons for pretty things
-	use("simrat39/symbols-outline.nvim")
-	use("stevearc/aerial.nvim")
-	use("stevearc/conform.nvim")
-	use("tpope/vim-fugitive") -- git integration
-	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("windwp/nvim-autopairs") -- auto close brackets, etc.
-	use("yorickpeterse/nvim-window")
-	use({
+return require("lazy").setup({
+	"MunifTanjim/nui.nvim",
+	"RRethy/vim-illuminate",
+	"Yggdroot/indentLine",
+	"folke/flash.nvim",
+	"folke/noice.nvim",
+	"folke/trouble.nvim",
+	"junegunn/gv.vim",
+	"lewis6991/gitsigns.nvim",
+	"majutsushi/tagbar",
+	"mbbill/undotree",
+	"nvim-lua/plenary.nvim",
+	"nvim-lua/popup.nvim",
+	"nvim-lualine/lualine.nvim",
+	"nvim-telescope/telescope.nvim",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter-context",
+	"nvim-treesitter/playground",
+	"rcarriga/nvim-notify",
+	"romgrk/barbar.nvim",
+	"stevearc/conform.nvim",
+	"tpope/vim-fugitive",
+	"windwp/nvim-autopairs",
+	{ "AlphaTechnolog/pywal.nvim", name = "pywal" },
+	{ "epwalsh/obsidian.nvim", lazy = true },
+	{ "simrat39/symbols-outline.nvim", lazy = true },
+	{ "stevearc/aerial.nvim", lazy = true },
+	{ "yorickpeterse/nvim-window", lazy = true },
+	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
-		requires = {
+		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
-			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
-	})
-	use({
+	},
+	{
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup()
 		end,
-	})
-	use({
+	},
+	{
 		"oncomouse/lushwal",
-		requires = {
-			{ "rktjmp/lush.nvim", opt = true },
-			{ "rktjmp/shipwright.nvim", opt = true },
+		dependencies = {
+			{ "rktjmp/lush.nvim", lazy = true },
+			{ "rktjmp/shipwright.nvim", lazy = true },
 		},
-	})
-	use({ "AlphaTechnolog/pywal.nvim", as = "pywal" })
-	use({
+	},
+	{
 		"VonHeikemen/lsp-zero.nvim",
 		branch = "v2.x",
-		requires = {
+		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
 			{ "williamboman/mason.nvim" },
@@ -118,13 +71,13 @@ return require("packer").startup(function(use)
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 		},
-	})
-	use({
+	},
+	{
 		"folke/which-key.nvim",
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 			require("which-key").setup({})
 		end,
-	})
-end)
+	},
+})
