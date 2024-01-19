@@ -17,7 +17,7 @@ require("noice").setup({
 	},
 	messages = {
 		enabled = true,
-		view = "virtualtext",
+		view = false,
 		view_error = "notify", -- view for errors
 		view_warn = "notify", -- view for warnings
 		view_history = "messages", -- view for :messages

@@ -106,5 +106,5 @@ alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # set light or dark mode
-alt - n : "${HOME}"/.env/config/scripts/light.sh
-alt - m : "${HOME}"/.env/config/scripts/dark.sh
+alt - m : "${HOME}"/.env/config/scripts/light.sh
+alt - n : "${HOME}"/.env/config/scripts/dark.sh

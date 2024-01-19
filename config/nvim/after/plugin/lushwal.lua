@@ -3,9 +3,13 @@ vim.g.lushwal_configuration = {
 	addons = {
 		barbar = true,
 		bufferline_nvim = true,
+		dashboard_nvim = true,
+		indent_blankline_nvim = true,
 		lualine = true,
+		mini_nvim = true,
 		nvim_tree_lua = true,
 		telescope_nvim = true,
-		treesitter = true
-	}
+		treesitter = true,
+		which_key_nvim = true,
+	},
 }

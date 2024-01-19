@@ -19,18 +19,40 @@ return require("lazy").setup({
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-treesitter/nvim-treesitter-context",
 	"nvim-treesitter/playground",
+	"rcarriga/nvim-dap-ui",
 	"rcarriga/nvim-notify",
 	"romgrk/barbar.nvim",
 	"stevearc/conform.nvim",
 	"tpope/vim-fugitive",
 	"windwp/nvim-autopairs",
-	"rcarriga/nvim-dap-ui",
+	{
+		"stevearc/dressing.nvim",
+		lazy = true,
+		init = function()
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
+		end,
+	},
+	{ "echasnovski/mini.indentscope", version = "*" },
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	{ "AlphaTechnolog/pywal.nvim", name = "pywal" },
 	{ "epwalsh/obsidian.nvim", lazy = true },
 	{ "simrat39/symbols-outline.nvim", lazy = true },
 	{ "stevearc/aerial.nvim", lazy = true },
 	{ "mfussenegger/nvim-dap", lazy = true },
-	{ "yorickpeterse/nvim-window", lazy = true },
+	{
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",

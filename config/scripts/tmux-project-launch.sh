@@ -8,6 +8,8 @@ else
     ~/personal \
     ~/work \
     ~/work/rita \
+    ~/work/siftr \
+    ~/work/nobu \
     ~/work/newlands \
     ~/work/ect-infra/ \
     -maxdepth 1 -mindepth 1 -type d && \

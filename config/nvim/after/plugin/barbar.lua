@@ -111,8 +111,8 @@ local bufferline_api = require("bufferline.api")
 local opts = { noremap = true, silent = true }
 
 -- Move to previous/next
-vim.keymap.set("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
-vim.keymap.set("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
+vim.keymap.set("n", "<leader>h", "<Cmd>BufferPrevious<CR>", opts)
+vim.keymap.set("n", "<leader>l", "<Cmd>BufferNext<CR>", opts)
 
 -- Close buffer
-vim.keymap.set("n", "<C-q>", "<Cmd>BufferClose<CR>", opts)
+vim.keymap.set("n", "<leader>q", "<Cmd>BufferClose<CR>", opts)

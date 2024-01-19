@@ -5,17 +5,15 @@ local opts = { noremap = true, silent = true }
 -- Save
 map("n", "<C-s>", [[:w<cr>]], opts)
 
-vim.keymap.set("n", "<leader>w", [[:lua require('nvim-window').pick()<CR>]], {})
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
--- map("n", "<C-h>", "<C-w>h", opts)
--- map("n", "<C-j>", "<C-w>j", opts)
--- map("n", "<C-k>", "<C-w>k", opts)
--- map("n", "<C-l>", "<C-w>l", opts)
-
-map("n", "<leader>k", ":resize -5<CR>", opts)
-map("n", "<leader>j", ":resize +5<CR>", opts)
-map("n", "<leader>h", ":vertical resize -5<CR>", opts)
-map("n", "<leader>l", ":vertical resize +5<CR>", opts)
+map("n", "<leader>fk", ":resize -5<CR>", opts)
+map("n", "<leader>fj", ":resize +5<CR>", opts)
+map("n", "<leader>fh", ":vertical resize -5<CR>", opts)
+map("n", "<leader>fl", ":vertical resize +5<CR>", opts)
 
 -- Move highlighted lines
 map("v", "J", ":m '>+1<CR>gv=gv", opts)
