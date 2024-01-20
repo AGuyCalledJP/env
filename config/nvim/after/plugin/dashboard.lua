@@ -7,7 +7,7 @@ require("dashboard").setup({
 		shortcut = {
 			{ desc = "󰊳 Lazy", group = "@property", action = "Lazy", key = "l" },
 			{
-				icon = " ",
+				icon = "⌕ ",
 				icon_hl = "@variable",
 				desc = "Files",
 				group = "Label",
@@ -15,7 +15,16 @@ require("dashboard").setup({
 				key = "f",
 			},
 			{
-				desc = " Commands",
+				icon = "𐂷 ",
+				icon_hl = "@variable",
+				desc = "File Tree",
+				group = "Label",
+				action = "Neotree toggle",
+				key = "b",
+			},
+			{
+				icon = "⌘ ",
+				desc = "Commands",
 				group = "DiagnosticHint",
 				action = "Telescope commands",
 				key = "c",
