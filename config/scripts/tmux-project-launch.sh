@@ -5,7 +5,9 @@ if [[ $# -eq 1 ]]; then
 else
   selected=$( \
     (find \
+    ~/tools-cli/ \
     ~/personal \
+    ~/.env \
     ~/work \
     ~/work/rita \
     ~/work/siftr \

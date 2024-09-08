@@ -24,6 +24,7 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/Users/polo/Library/Python/3.9/bin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/tools-cli/bin/:$PATH"
 
 export LANG=en_US.UTF-8
 
@@ -44,11 +45,15 @@ alias c='clear'
 alias h='history'
 alias n='nvim'
 alias blobby='aws --endpoint-url https://blob.mr3.simcloud.apple.com --cli-read-timeout 300 --profile blobby'
+alias cond='aws --endpoint-url https://conductor.data.apple.com --cli-read-timeout 300'
 
 # Kube shawties
 alias k='kubectl'
 alias kg='kubectl get'
 alias kd='kubectl describe'
+
+# Docker
+alias dck='docker container kill $(docker container ls | awk "{ print $1 }" | grep -v CONTAINER | xargs)'
 
 # Make tmux do tricks
 alias t='tmux'
@@ -57,8 +62,13 @@ alias tks='tmux kill-session'
 alias tkn='tmux kill-session -a'
 alias tka='tmux kill-server'
 
+# Zoxide
+alias cd='z'
+
 #Git related shenanigans
 alias conflicts='nvim $(git conflicts | uniq)'
+
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 
 
 #Plugins
@@ -95,3 +105,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 eval "$(rbenv init - zsh)"
+eval "$(zoxide init zsh)"

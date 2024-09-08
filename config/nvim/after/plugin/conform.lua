@@ -4,7 +4,7 @@ require("conform").setup({
 		-- Conform will run multiple formatters sequentially
 		python = { "ruff_format" },
 		-- Use a sub-list to run only the first available formatter
-		javascript = { { "eslint", "eslint_d", "prettierd", "prettier" } },
+		-- javascript = { { "eslint", "eslint_d", "prettierd", "prettier" } },
 	},
 	format_on_save = {
 		timout_ms = 500,

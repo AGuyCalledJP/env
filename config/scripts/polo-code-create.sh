@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-yabai -m window --focus west
-yabai -m window --stack next
 selected_name=$(cat ~/.env/lastusedmux)
 
 session_count=$(tmux ls | grep $selected_name | wc -l | xargs)

@@ -1,7 +1,7 @@
 [user]
     name = Jared Polonitza
-    email = jared_polonitza@apple.com
-    #email = jaredp1234@gmail.com
+    #email = jared_polonitza@apple.com
+    email = jaredp1234@gmail.com
     signingKey = E6689B8190C434D2
 [core]
     editor = vim
@@ -25,6 +25,7 @@
     rh = reset --hard
     rs = reset --soft
     conflicts = diff --name-only --diff-filter=U
+    usm = submodule update --init --recursive --remote
 [init]
     defaultBranch = main
 [commit]
@@ -37,3 +38,8 @@
 	insteadOf = https://github.pie.apple.com/
 [url "ssh://git@stash.sd.apple.com/"]
 	insteadOf = https://stashweb.sd.apple.com/scm/
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
