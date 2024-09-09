@@ -20,6 +20,30 @@ key-mapping.preset = 'qwerty'
 on-focus-changed = ['move-mouse window-lazy-center']
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.radar.gm'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.electron.open-lens'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace s'
+
 [workspace-to-monitor-force-assignment]
 a = 'main'
 s = 'main'
@@ -32,7 +56,7 @@ s = 'main'
 7 = ['secondary', 'main'] 
 8 = ['secondary', 'main'] 
 9 = ['secondary', 'main'] 
-0 = ['secondary', 'main'] 
+10 = ['secondary', 'main'] 
 d = ['secondary', 'main'] 
 
 [gaps]
@@ -49,12 +73,13 @@ alt-enter = 'exec-and-forget ~/.env/config/scripts/open-iterm2.sh'
 alt-f = 'fullscreen'
 
 alt-w = 'close'
+alt-e = 'balance-sizes'
 alt-shift-c = 'reload-config'
 
-alt-h = 'focus left'
+alt-h = 'focus left --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
 alt-j = 'focus down'
 alt-k = 'focus up'
-alt-l = 'focus right'
+alt-l = 'focus right --boundaries all-monitors-outer-frame --boundaries-action wrap-around-all-monitors'
 
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
@@ -102,8 +127,8 @@ alt-shift-n = 'join-with down'
 alt-shift-m = 'join-with up'
 alt-shift-comma = 'join-with right'
 
-alt-r = 'layout tiles horizontal vertical'
-alt-shift-r = 'layout accordion horizontal vertical'
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
 
 alt-n = 'exec-and-forget ~/.env/config/scripts/dark.sh'
 alt-m = 'exec-and-forget ~/.env/config/scripts/light.sh'
